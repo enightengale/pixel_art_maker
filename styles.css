@@ -19,7 +19,7 @@ h2:first-of-type {
 table,
 tr,
 td {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 table {
@@ -37,4 +37,22 @@ td {
 
 input[type=number] {
     width: 6em;
+}
+
+.space {
+
+  margin: 0px;
+  padding-left: 20px;
+  padding-bottom: 12px;
+  border: 2px solid black;
+
+}
+
+input.form-control {
+  text-align: center;
+  margin: auto;
+}
+
+input#colorPicker.form-control {
+  width: 15%;
 }
