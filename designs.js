@@ -5,8 +5,10 @@
 
 const color = $("#colorPicker");
 const submit = $("#submit");
+const sizePicker = document.querySelector("#sizePicker");
 let color_value = $("#colorPicker").val();
 let height, width;
+let isGrid = false;
 getColor();
 
 
@@ -16,23 +18,39 @@ function getColor(){
   });
 }
 
-
-submit.click(function(){
-  makeGrid();
-  $("#input_height").val(0);
-  $("#input_width").val(0);
+sizePicker.addEventListener("submit", function(e) {
+    e.preventDefault();
+    isGrid = true;
+    makeGrid();
+    $("#input_height").val(0);
+    $("#input_width").val(0);
 });
 
+
+// submit.click(function(){
+//   makeGrid();
+// });
+
 function createBoxes(){
-  $("#pixel_canvas").append("<span type=button class=space></span>");
-  $(".space").click(function(){
+  if(isGrid === true) {
+    $(".space").remove();
+    isGrid = false;
+  }
 
-    $(this).css("background-color", color_value);
+    $("#pixel_canvas").append("<span type=button class=space></span>");
+    $(".space").click(function(){
 
-  });
+      $(this).css("background-color", color_value);
+
+    });
 }
 
 function makeGrid() {
+  isGrid = true;
+  if(isGrid === true) {
+    $(".space").remove();
+    isGrid = false;
+  }
   height = $("#input_height").val();
 
   for(let i = 1; i <= height; i++){

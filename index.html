@@ -17,10 +17,10 @@
         <form id="sizePicker" class="form-inline">
           <div class="form-group">
             <label for="height">Grid Height</label>
-            <input class="form-control" type="number" id="input_height" name="height" min="1" value="1">
+            <input class="form-control" type="number" required id="input_height" name="height" min="1" max="40" value="1">
             <label for="width">Grid Width</label>
-            <input class="form-control" type="number" id="input_width" name="width" min="1" value="1">
-            <input class="form-control" type="button" id="submit" value="submit">
+            <input class="form-control" type="number" required id="input_width" name="width" min="1" max="40" value="1">
+            <input class="form-control" type="submit" id="submit" value="submit">
             <h2>Pick A Color</h2>
             <input class="form-control" type="color" id="colorPicker">
           </div>
