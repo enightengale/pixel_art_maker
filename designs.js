@@ -26,11 +26,6 @@ sizePicker.addEventListener("submit", function(e) {
     $("#input_width").val(0);
 });
 
-
-// submit.click(function(){
-//   makeGrid();
-// });
-
 function createBoxes(){
   if(isGrid === true) {
     $(".space").remove();
@@ -52,12 +47,13 @@ function makeGrid() {
     isGrid = false;
   }
   height = $("#input_height").val();
+  width = $("#input_width").val();
 
   for(let i = 1; i <= height; i++){
     createBoxes();
-    width = $("#input_width").val();
 
     let two = 2;
+
     while (two <= width) {
 
         createBoxes();
