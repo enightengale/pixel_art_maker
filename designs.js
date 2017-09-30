@@ -1,8 +1,3 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
 const color = $("#colorPicker");
 const submit = $("#submit");
 const sizePicker = document.querySelector("#sizePicker");
@@ -11,13 +6,14 @@ let height, width;
 let isGrid = false;
 getColor();
 
-
+//choose your color here!
 function getColor(){
   color.change(function(){
       color_value  = $("#colorPicker").val();
   });
 }
 
+//on click listener for submit button
 sizePicker.addEventListener("submit", function(e) {
     e.preventDefault();
     isGrid = true;
@@ -26,6 +22,7 @@ sizePicker.addEventListener("submit", function(e) {
     $("#input_width").val(0);
 });
 
+//dynamically creates new boxes for grid!
 function createBoxes(){
   if(isGrid === true) {
     $(".space").remove();
@@ -40,6 +37,7 @@ function createBoxes(){
     });
 }
 
+//makes grid based on user input
 function makeGrid() {
   isGrid = true;
   if(isGrid === true) {
